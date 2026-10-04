@@ -70,7 +70,7 @@ namespace Bastards
             // hero_main_options = self explanatory
             // lord_pretalk = make them ask "anything else?"
             // close_window = EXIT // seems to cause attack bug when done on map, so avoid.
-            // lord_talk_speak_diplomacy_2 = "There is something I'd like to discuss."
+            // NOTE: lord_talk_speak_diplomacy_2 was removed in game v1.3 (diplomacy branch reworked)
 
             // BASE MOD DIALOG
 
@@ -108,7 +108,8 @@ namespace Bastards
         }
 
         private void AddBecomeBastardDialogs(CampaignGameStarter game) {
-            game.AddPlayerLine("BastardsBecomeHerosBastard", "lord_talk_speak_diplomacy_2", "BastardsBecomeHerosBastardOutput",
+            // lord_talk_speak_diplomacy_2 was removed in game v1.3; hero_main_options is the equivalent always-available hook now.
+            game.AddPlayerLine("BastardsBecomeHerosBastard", "hero_main_options", "BastardsBecomeHerosBastardOutput",
                 "{=BastardsBecomeHerosBastard}I believe I'm your bastard child.",
             null, null, 100, null, null);
 
